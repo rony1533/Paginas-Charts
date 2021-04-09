@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.0.2/chart.min.js"
+        integrity="sha512-dnUg2JxjlVoXHVdSMWDYm2Y5xcIrJg1N+juOuRi0yLVkku/g26rwHwysJDAMwahaDfRpr1AxFz43ktuMPr/l1A=="
+        crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div style="width: 50%;">
+        <canvas id="chart_radar"></canvas>
+    </div>
+
+</body>
+
+</html>
+<script>
+    var ctx = chart_radar.getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'radar',
+        data: {
+            labels: [
+                'Comendo',
+                'Bebendo (suco ou água)',
+                'Dormindo',
+                'Designando',
+                'Codando',
+                'Pedalando',
+                'Correndo'
+            ],
+            datasets: [{
+                label: 'Rony do Presente',
+                data: [4, 2, 8, 1, 5, 0, 2],
+                fill: true,
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgb(255, 99, 132)',
+                pointBackgroundColor: 'rgb(255, 99, 132)',
+                pointBorderColor: 'black',
+                pointHoverBackgroundColor: '#A14646',
+                pointHoverBorderColor: 'rgb(255, 99, 132)'
+            }, {
+                label: 'Rony do futuro',
+                data: [3, 2, 6, 3, 8, 1 , 1],
+                fill: true,
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: 'rgb(54, 162, 235)',
+                pointBackgroundColor: 'rgb(54, 162, 235)',
+                pointBorderColor: 'white',
+                pointHoverBackgroundColor: '#C2DCDB',
+                pointHoverBorderColor: 'rgb(54, 162, 235)'
+            }]
+
+        },
+        options: {
+            elements: {
+                line: {
+                    borderWidth: 3
+                }
+            }
+        },
+
+    });
+</script>
